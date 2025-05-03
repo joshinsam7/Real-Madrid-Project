@@ -1,12 +1,8 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import * as d3 from 'd3';
 
 const UCLMa = () => {
   const svgRef = useRef(null);
-  const [selectedVictory, setSelectedVictory] = useState(null);
-  const [hoveredVictory, setHoveredVictory] = useState(null);
-  const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 });
-  const [showModal, setShowModal] = useState(false);
 
   const victories = [
     {
@@ -18,9 +14,7 @@ const UCLMa = () => {
         "Longitude": 2.2530,
         "Opponent": "Stade de Reims",
         "Real Madrid Goals": 4,
-        "Opponent Goals": 3,
-        "Stadium Image": "../ucl_wins/Parc_Des_Princes.jpeg",
-        "Image": "../ucl_wins/1956.jpeg"
+        "Opponent Goals": 3
     },
     {
         "Year": 1957,
@@ -31,9 +25,7 @@ const UCLMa = () => {
         "Longitude": -3.6883,
         "Opponent": "Fiorentina",
         "Real Madrid Goals": 2,
-        "Opponent Goals": 0,
-        "Stadium Image": "../ucl_wins/Santiago_Bernabéu.jpeg",
-        "Image": "../ucl_wins/1957.jpeg"
+        "Opponent Goals": 0
     },
     {
         "Year": 1958,
@@ -44,9 +36,7 @@ const UCLMa = () => {
         "Longitude": 4.3347,
         "Opponent": "AC Milan",
         "Real Madrid Goals": 3,
-        "Opponent Goals": 2,
-        "Stadium Image": "../ucl_wins/Heysel_Stadium.jpeg",
-        "Image": "../ucl_wins/1958.jpeg"
+        "Opponent Goals": 2
     },
     {
         "Year": 1959,
@@ -57,9 +47,7 @@ const UCLMa = () => {
         "Longitude": 9.2322,
         "Opponent": "Stade de Reims",
         "Real Madrid Goals": 2,
-        "Opponent Goals": 0,
-        "Stadium Image": "../ucl_wins/Neckarstadion.jpeg",
-        "Image": "../ucl_wins/1959.jpeg"
+        "Opponent Goals": 0
     },
     {
         "Year": 1960,
@@ -70,9 +58,7 @@ const UCLMa = () => {
         "Longitude": -4.2514,
         "Opponent": "Eintracht Frankfurt",
         "Real Madrid Goals": 7,
-        "Opponent Goals": 3,
-        "Stadium Image": "./ucl_wins/Hampden_Park.jpeg",
-        "Image": "./ucl_wins/1960.jpeg"
+        "Opponent Goals": 3
     },
     {
         "Year": 1966,
@@ -83,9 +69,7 @@ const UCLMa = () => {
         "Longitude": 4.3347,
         "Opponent": "Partizan Belgrade",
         "Real Madrid Goals": 2,
-        "Opponent Goals": 1,
-        "Stadium Image": "./ucl_wins/Heysel_Stadium.jpeg",
-        "Image": "./ucl_wins/1966.jpeg"
+        "Opponent Goals": 1
     },
     {
         "Year": 1998,
@@ -96,9 +80,7 @@ const UCLMa = () => {
         "Longitude": 4.9414,
         "Opponent": "Juventus",
         "Real Madrid Goals": 1,
-        "Opponent Goals": 0,
-        "Stadium Image": "./ucl_wins/Amsterdam_Arena.jpeg",
-        "Image": "./ucl_wins/1998.jpeg"
+        "Opponent Goals": 0
     },
     {
         "Year": 2000,
@@ -109,9 +91,7 @@ const UCLMa = () => {
         "Longitude": 2.3602,
         "Opponent": "Valencia",
         "Real Madrid Goals": 3,
-        "Opponent Goals": 0,
-        "Stadium Image": "./ucl_wins/Stade_De_France.jpeg",
-        "Image": "./ucl_wins/2000.jpeg"
+        "Opponent Goals": 0
     },
     {
         "Year": 2002,
@@ -122,9 +102,7 @@ const UCLMa = () => {
         "Longitude": -4.2514,
         "Opponent": "Bayer Leverkusen",
         "Real Madrid Goals": 2,
-        "Opponent Goals": 1,
-        "Stadium Image": "./ucl_wins/Hampden_Park.jpeg",
-        "Image": "./ucl_wins/2002.jpeg"
+        "Opponent Goals": 1
     },
     {
         "Year": 2014,
@@ -135,9 +113,7 @@ const UCLMa = () => {
         "Longitude": -9.1847,
         "Opponent": "Atlético Madrid",
         "Real Madrid Goals": 4,
-        "Opponent Goals": 1,
-        "Stadium Image": "./ucl_wins/Estádio_Da_Luz.jpeg",
-        "Image": "./ucl_wins/2014.jpeg"
+        "Opponent Goals": 1
     },
     {
         "Year": 2016,
@@ -148,9 +124,7 @@ const UCLMa = () => {
         "Longitude": 9.1240,
         "Opponent": "Atlético Madrid",
         "Real Madrid Goals": "1 (5-3 pens)",
-        "Opponent Goals": 1,
-        "Stadium Image": "./ucl_wins/San_Siro.jpeg",
-        "Image": "./ucl_wins/2016.jpeg"
+        "Opponent Goals": 1
     },
     {
         "Year": 2017,
@@ -161,9 +135,7 @@ const UCLMa = () => {
         "Longitude": -3.1826,
         "Opponent": "Juventus",
         "Real Madrid Goals": 4,
-        "Opponent Goals": 1,
-        "Stadium Image": "./ucl_wins/Principality_Stadium.jpeg",
-        "Image": "./ucl_wins/2017.jpeg"
+        "Opponent Goals": 1
     },
     {
         "Year": 2018,
@@ -174,9 +146,7 @@ const UCLMa = () => {
         "Longitude": 30.5211,
         "Opponent": "Liverpool",
         "Real Madrid Goals": 3,
-        "Opponent Goals": 1,
-        "Stadium Image": "./ucl_wins/NSC_Olimpiyskiy_Stadium.jpeg",
-        "Image": "./ucl_wins/2018.jpeg"
+        "Opponent Goals": 1
     },
     {
         "Year": 2022,
@@ -187,10 +157,16 @@ const UCLMa = () => {
         "Longitude": 2.3602,
         "Opponent": "Liverpool",
         "Real Madrid Goals": 1,
-        "Opponent Goals": 0,
-        "Stadium Image": "./ucl_wins/Stade_De_France.jpeg",
-        "Image": "./ucl_wins/2022.jpeg"
+        "Opponent Goals": 0
     }];
+
+  const countryVictories = {};
+  victories.forEach(victory => {
+    if (!countryVictories[victory.Country]) {
+      countryVictories[victory.Country] = [];
+    }
+    countryVictories[victory.Country].push(victory);
+  });
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -199,25 +175,22 @@ const UCLMa = () => {
     
     const initializeMap = async () => {
       if (!svgRef.current || !svgRef.current.parentElement) {
-        console.error("SVG reference or parent element not available");
         return;
       }
       
       const containerWidth = svgRef.current.parentElement.clientWidth;
       const containerHeight = svgRef.current.parentElement.clientHeight;
       
-      console.log("Container dimensions:", containerWidth, containerHeight);
-      
       const svg = d3.select(svgRef.current);
       svg.selectAll("*").remove();
       
       svg.attr("width", containerWidth)
          .attr("height", containerHeight)
-         .style("background-color", "#234B6E"); 
+         .style("background-color", "#1a2a3a"); 
       
       const projection = d3.geoMercator()
-        .center([8.2275, 46.8182])
-        .scale(700)
+        .center([10, 50])
+        .scale(1300)
         .translate([containerWidth / 2, containerHeight / 2]);
 
       const path = d3.geoPath().projection(projection);
@@ -226,7 +199,6 @@ const UCLMa = () => {
         const europeData = await d3.json("https://raw.githubusercontent.com/leakyMirror/map-of-europe/master/GeoJSON/europe.geojson");
         
         if (!europeData || !europeData.features) {
-          console.error("Invalid GeoJSON data:", europeData);
           svg.append("text")
             .attr("x", containerWidth / 2)
             .attr("y", containerHeight / 2)
@@ -236,7 +208,7 @@ const UCLMa = () => {
           return;
         }
         
-        const customColors = d3.range(0, 1, 0.1).map(d3.interpolateGreens);
+        const customColors = d3.range(0, 1, 0.1).map(d3.interpolateCool);
         const colorScale = d3.scaleOrdinal()
           .domain(europeData.features.map(d => d.properties.NAME))
           .range(customColors);
@@ -246,11 +218,11 @@ const UCLMa = () => {
         const defs = svg.append("defs");
         const filter = defs.append("filter")
           .attr("id", "glow")
-          .attr("height", "130%")
-          .attr("width", "130%");
+          .attr("height", "300%")
+          .attr("width", "300%");
         
         filter.append("feGaussianBlur")
-          .attr("stdDeviation", "3.5")
+          .attr("stdDeviation", "8")
           .attr("result", "coloredBlur");
         
         const feMerge = filter.append("feMerge");
@@ -262,47 +234,50 @@ const UCLMa = () => {
           .enter().append("path")
           .attr("class", "country")
           .attr("d", path)
-          .attr("fill", d => colorScale(d.properties.NAME))
-          .attr("stroke", "#FFFFFF") 
-          .attr("stroke-width", d => countriesWithVictories.has(d.properties.NAME) ? 2 : 0.5)
-          .attr("filter", d => countriesWithVictories.has(d.properties.NAME) ? "url(#glow)" : null);
+          .attr("fill", d => countriesWithVictories.has(d.properties.NAME) ? 
+              "#4169E1" : colorScale(d.properties.NAME))
+          .attr("stroke", d => countriesWithVictories.has(d.properties.NAME) ? 
+              "#FFD700" : "#FFFFFF")
+          .attr("stroke-width", d => countriesWithVictories.has(d.properties.NAME) ? 
+              4 : 0.5)
+          .attr("filter", d => countriesWithVictories.has(d.properties.NAME) ? 
+              "url(#glow)" : null)
+          .attr("opacity", d => countriesWithVictories.has(d.properties.NAME) ? 
+              0.9 : 0.6);
 
         svg.selectAll("text")
           .data(europeData.features)
           .enter().append("text")
           .attr("transform", d => `translate(${projection(d3.geoCentroid(d))})`)
           .attr("dy", ".35em")
-          .attr("font-size", d => countriesWithVictories.has(d.properties.NAME) ? "10px" : "8px")
-          .attr("fill", "#333")
+          .attr("font-size", d => countriesWithVictories.has(d.properties.NAME) ? 
+              "14px" : "8px")
+          .attr("fill", d => countriesWithVictories.has(d.properties.NAME) ? 
+              "#FFD700" : "#ddd")
           .attr("text-anchor", "middle")
-          .style("font-weight", d => countriesWithVictories.has(d.properties.NAME) ? "bold" : "normal")
+          .style("font-weight", d => countriesWithVictories.has(d.properties.NAME) ? 
+              "bold" : "normal")
+          .style("text-shadow", d => countriesWithVictories.has(d.properties.NAME) ? 
+              "2px 2px 4px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000" : "none")
           .text(d => d.properties.NAME);
 
         svg.selectAll(".victory")
           .data(victories)
           .enter().append("image")
           .attr("class", "victory-marker")
-          .attr("xlink:href", "./ucl_wins//uefa.png")
+          .attr("xlink:href", "./ucl_wins/uefa.png")
           .attr("width", 40)
           .attr("height", 40)
-          .attr("x", d => projection([d.Longitude, d.Latitude])[0] + (Math.random() - 0.5) * 20 - 20)
-          .attr("y", d => projection([d.Longitude, d.Latitude])[1] + (Math.random() - 0.5) * 20 - 20)
+          .attr("x", d => projection([d.Longitude, d.Latitude])[0] - 20)
+          .attr("y", d => projection([d.Longitude, d.Latitude])[1] - 20)
           .style("filter", "drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.5))")
-          .on("mouseover", (event, d) => {
-            setHoveredVictory(d);
-            setTooltipPosition({ x: event.pageX, y: event.pageY });
-          })
-          .on("mouseout", () => setHoveredVictory(null))
-          .on("click", (event, d) => {
-            setSelectedVictory(d);
-            setShowModal(true);
-          });
+          .style("cursor", "pointer");
 
         svg.insert("rect", ":first-child")
           .attr("width", containerWidth)
           .attr("height", containerHeight)
-          .attr("fill", "#234B6E")
-          .attr("opacity", 0.3);
+          .attr("fill", "#1a2a3a")
+          .attr("opacity", 0.2);
 
         const zoom = d3.zoom()
           .scaleExtent([1, 8])
@@ -311,11 +286,7 @@ const UCLMa = () => {
           });
 
         svg.call(zoom);
-        
-        console.log("Map initialization complete");
-
       } catch (error) {
-        console.error("Error loading map data:", error);
         svg.append("text")
           .attr("x", containerWidth / 2)
           .attr("y", containerHeight / 2)
@@ -339,7 +310,6 @@ const UCLMa = () => {
 
   return (
     <div style={{ 
-      backgroundColor: '#4682B4',
       width: '100%',
       height: '100vh',
       position: 'relative',
@@ -347,15 +317,17 @@ const UCLMa = () => {
       flexDirection: 'column',
       justifyContent: 'center',
       alignItems: 'center',
-      padding: '20px'
+      padding: '10px'
     }}>
-            <h1>Real Madrid's UCL Final Wins Across Europe</h1>
+      <h1 style={{ color: 'white', textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)' }}>
+        Real Madrid's UCL Final Wins Across Europe
+      </h1>
       <div style={{
-        width: '80%',
+        width: '90%',
         height: '80%',
-        backgroundColor: '#000',
+        backgroundColor: '#0a1622',
         borderRadius: '20px',
-        border: '15px solid #333',
+        border: '15px solid #152238',
         boxShadow: '0 0 30px rgba(0, 0, 0, 0.7), inset 0 0 30px rgba(0, 0, 0, 0.4)',
         overflow: 'hidden',
         position: 'relative'
@@ -374,7 +346,7 @@ const UCLMa = () => {
         <div style={{
           width: '100%',
           height: '100%',
-          backgroundColor: '#1a1a1a',
+          backgroundColor: '#1a2a3a',
           overflow: 'hidden',
           position: 'relative'
         }}>
@@ -408,85 +380,6 @@ const UCLMa = () => {
           zIndex: 2
         }}></div>
       </div>
-
-      {hoveredVictory && (
-        <div style={{
-          position: 'absolute',
-          left: tooltipPosition.x + 10,
-          top: tooltipPosition.y - 28,
-          backgroundColor: 'black',
-          color: 'white',
-          padding: '8px',
-          borderRadius: '4px',
-          fontSize: '12px',
-          pointerEvents: 'none',
-          fontFamily: "'Oswald', sans-serif",
-          zIndex: 10
-        }}>
-          <div style={{ textAlign: 'left' }}>
-            <strong>Year:</strong> {hoveredVictory.Year}<br/>
-            <strong>City:</strong> {hoveredVictory.City}<br/>
-            <strong>Stadium:</strong> {hoveredVictory.Stadium}<br/>
-            <strong>Opponent:</strong> {hoveredVictory.Opponent}<br/>
-            <strong>Score:</strong> {hoveredVictory["Real Madrid Goals"]} - {hoveredVictory["Opponent Goals"]}<br/>
-            <img 
-              src={hoveredVictory["Stadium Image"]} 
-              alt={hoveredVictory.Stadium}
-              style={{ width: '200px', height: 'auto', marginTop: '10px', borderRadius: '8px' }}
-            />
-          </div>
-        </div>
-      )}
-
-      {showModal && selectedVictory && (
-        <div style={{
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          backgroundColor: 'rgba(0,0,0,0.5)',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          zIndex: 1000
-        }}>
-          <div style={{
-            backgroundColor: 'black',
-            color: 'white',
-            padding: '30px',
-            borderRadius: '12px',
-            width: '600px',
-            maxHeight: '80%',
-            overflowY: 'auto',
-            position: 'relative',
-            fontFamily: "'Oswald', sans-serif"
-          }}>
-            <span 
-              style={{
-                position: 'absolute',
-                top: '10px',
-                right: '15px',
-                fontSize: '20px',
-                fontWeight: 'bold',
-                cursor: 'pointer'
-              }}
-              onClick={() => setShowModal(false)}
-            >
-              &times;
-            </span>
-            <img
-              src={selectedVictory.Image}
-              alt={selectedVictory.Year}
-              style={{ width: '100%', height: 'auto', borderRadius: '8px', marginTop: '10px' }}
-            />
-            <h3>{selectedVictory.Year} - {selectedVictory.City}</h3>
-            <p><strong>Stadium:</strong> {selectedVictory.Stadium}</p>
-            <p><strong>Opponent:</strong> {selectedVictory.Opponent}</p>
-            <p><strong>Score:</strong> {selectedVictory["Real Madrid Goals"]} - {selectedVictory["Opponent Goals"]}</p>
-          </div>
-        </div>
-      )}
     </div>
   );
 };
