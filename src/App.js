@@ -26,6 +26,7 @@ import FirstVictory from './Components/EarlySteps/FirstVictory';
 import EarlySuccessAndLaliga from './Components/EarlySteps/EarlySuccessAndLaliga';
 import EarlySuccessLineChart from './Components/EarlySteps/EarlySuccessLineChart';
 import RealMadridToday from './Components/RealMadridToday';
+import LostDominance from './Components/LostDominance';
 gsap.registerPlugin(ScrollTrigger);
 
 
@@ -224,9 +225,11 @@ export default function App() {
               <EarlySuccessAndLaliga/>
               <EarlySuccessLineChart/>
               <SantiagoScroll />
+              <LostDominance/>
               <Galacticos />
               <GalacticoPhotos />
               <GalacticoVis />
+              
               <UCL />
               <Ramos />
               <ELClasicoVis />
