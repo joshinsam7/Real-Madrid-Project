@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import TopPlayers from './TopPlayers';
 import {Parallax } from 'react-scroll-parallax';
 import uclTable from '../img/ucl_table.png'
+import ParallaxComp from './Parallax/Parallax';
 
 const Studio = () => {
     return (
@@ -12,14 +13,9 @@ const Studio = () => {
             backgroundSize: 'cover', 
             backgroundPosition: 'center'
         }}>
-            <Parallax translateY={[0,0]} style={{
-                height: '100vh',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-            }}>
+            <ParallaxComp>
                 <TopPlayers />
-            </Parallax>
+            </ParallaxComp>
         </div>
     );
 };

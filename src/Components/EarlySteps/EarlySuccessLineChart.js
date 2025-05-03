@@ -184,7 +184,7 @@ export default function EarlySuccessLineChart() {
                             background: activeChart === 'laliga' ? '#69b3a2' : '#f0f0f0'
                         }}
                     >
-                        La laliga
+                        La Liga
                     </button>
                     <button 
                         onClick={() => setActiveChart('copa')}
