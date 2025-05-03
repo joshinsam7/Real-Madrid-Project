@@ -19,7 +19,7 @@ import SplashScreen from './Components/SplashScreen';
 import './App.css';
 import Legacy from './Components/Legacy';
 import TopPlayers  from './Components/TopPlayers';
-
+import Ending from './Components/Ending';
 import Studio from './Components/Studio';
 import Gallery from './Components/Gallery';
 import FirstVictory from './Components/EarlySteps/FirstVictory';
@@ -236,6 +236,7 @@ export default function App() {
               <ELClasicoVis />
               <RealMadridToday />  
               <Studio />
+              <Ending/>
               <Gallery />
             </div>
           </div>
