@@ -380,7 +380,7 @@ function defaultNetwork(container, options = {}, handlePlayerClick) {
       node.style("opacity", 1);
       link.style("opacity", 1);
     })
-    .attr("fill", "none");
+    .attr("fill", "#fff");
 
   link.attr("d",
       d3.linkHorizontal()
@@ -420,7 +420,9 @@ function defaultNetwork(container, options = {}, handlePlayerClick) {
       return 4;
     })
     .attr("font-size", "15px")
-    .attr("fill", "#fff")
+    .attr("fill", "#000")
+    .attr("font-weight", "bold")
+    .attr("color", "#fff")
     .style("z-index", 6);
 
   function ticked() {

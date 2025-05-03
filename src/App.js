@@ -65,75 +65,65 @@ export default function App() {
     if (scrollPercent <= 0.03) {
       setShowTimeLine(false);
     } else if (scrollPercent > 0.03 && scrollPercent <= 0.06) {
+      setShowTimeLine(true);
       setst1(true);
       setct1(true);
-      setst2(false);
-
-      newYear = 1902;
-    } else if (scrollPercent > 0.06 && scrollPercent <= 0.09) {
-      setct1(false);
       settp1(1);
-      newYear = 1905;
-    } else if (scrollPercent > 0.09 && scrollPercent <= 0.15) {
-      setShowTimeLine(false);
-      const overlayScrollPercent = (scrollPercent - 0.75) / 0.25;
-      setOverlayOpacity(Math.min(1, Math.max(0, overlayScrollPercent)));
-    } else if (scrollPercent > 0.18 && scrollPercent <= 0.24) {
-      newYear = 1921;
+      newYear = 1902;
+    } else if (scrollPercent > 0.06 && scrollPercent <= 0.12) {
+      setShowTimeLine(false)
+      setst2(false);
+      setct2(false);
+    } else if (scrollPercent > 0.14 && scrollPercent <= 0.18) {
       setShowTimeLine(true);
+      newYear = 1928;
       settp1(5);
-    } else if (scrollPercent > 0.24 && scrollPercent <= 0.27) {
+      settp2(0);
       setst2(true);
       setct2(true);
-      newYear = 1927;
-    } else if (scrollPercent > 0.27 && scrollPercent <= 0.30) {
-      setct2(false);
+    } else if (scrollPercent > 0.18 && scrollPercent <= 0.22) {
       setShowTimeLine(true);
+      newYear = 1943;
       settp1(7);
       settp2(2);
-      newYear = 1943;
-    } else if (scrollPercent > 0.30 && scrollPercent <= 0.39) {
+    } else if (scrollPercent > 0.22 && scrollPercent <= 0.30) {
       setShowTimeLine(false);
+      setst3(false);
+      setct3(false);
+    } else if (scrollPercent > 0.30 && scrollPercent <= 0.34) {
+      setShowTimeLine(true);
+      setct3(true);
+      setst3(true);
+      settp1(20);
+      settp2(14);
+      settp3(6);
+      newYear = 1980;
+    } else if (scrollPercent > 0.34 && scrollPercent <= 0.38) {
+      setShowTimeLine(true);
+      settp1(28);
+      settp2(16);
+      settp3(8);
+      newYear = 2000;
     } 
-    else if(scrollPercent > 0.39 && scrollPercent <= 0.44){
+    else if(scrollPercent > 0.38 && scrollPercent <= 0.53){
+      setShowTimeLine(false);
+    }
+    else if(scrollPercent > 0.53 && scrollPercent <= 0.58){
       setShowTimeLine(true)
-      setst3(true)
-      settp1(17)
-      settp2(27)
-      settp3(7)
-      newYear = 1998
+      newYear = 2012
     }
-    else if(scrollPercent > 0.44 && scrollPercent <= 0.48){
-      settp3(8)
-      newYear = 2000
-    }
-    else if(scrollPercent > 0.48 && scrollPercent <= 0.62){
+    else if(scrollPercent > 0.58 && scrollPercent <= 0.80){
       setShowTimeLine(false)
     }
 
-    else if(scrollPercent > 0.62 && scrollPercent <= 0.65){
-      setShowTimeLine(true)
-      newYear = 2012
-      settp1(18)
-      settp2(32)
-      settp3(9)
-    }
-    else if(scrollPercent > 0.65 && scrollPercent <= 0.68){
-      newYear = 2014
-      settp1(19)
-      settp2(32)
-      settp3(9)
-    }
-    else if(scrollPercent > 0.68 && scrollPercent <= 0.90){
-      setShowTimeLine(false)
-    }
-    else if(scrollPercent > 0.90 && scrollPercent <= 0.93){
+    else if(scrollPercent > 0.83 && scrollPercent <= 0.87){
       setShowTimeLine(true)
       newYear = 2025
       settp1(20)
       settp2(36)
       settp3(15)
     }
+    
     else{
       setShowTimeLine(false)
     }
