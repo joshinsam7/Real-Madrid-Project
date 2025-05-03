@@ -63,12 +63,13 @@ export default function App() {
     let newYear;
 
     if (scrollPercent <= 0.03) {
-      setShowTimeLine(true);
-      newYear = 1902;
+      setShowTimeLine(false);
     } else if (scrollPercent > 0.03 && scrollPercent <= 0.06) {
       setst1(true);
       setct1(true);
-      newYear = 1903;
+      setst2(false);
+
+      newYear = 1902;
     } else if (scrollPercent > 0.06 && scrollPercent <= 0.09) {
       setct1(false);
       settp1(1);

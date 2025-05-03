@@ -204,7 +204,7 @@ function createBarChart(container, {width, height}) {
       .attr("dy", "1em")
       .style("text-anchor", "middle")
       .style("font-weight","bold")
-      .text("- - - Represents the maximum a Spanish club(Not Real Madrid) spent upto that point");
+      .text("- - - Represents the maximum a Spanish club(Not Real Madrid) spent by that point");
   
     
     return svg; 

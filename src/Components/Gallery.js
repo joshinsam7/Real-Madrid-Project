@@ -8,6 +8,7 @@ import jersey_gk from '../img/jersey_gk.png';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 import plData from '../mng/real_madrid_squad_history.csv';
+import ParallaxComp from './Parallax/Parallax';
 
 const Gallery = () => {
   const [players, setPlayers] = useState([]);
@@ -318,6 +319,7 @@ const Gallery = () => {
   }
 
   return (
+    <ParallaxComp>
     <div
       className="gallery-container"
       style={{
@@ -331,7 +333,7 @@ const Gallery = () => {
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         position: 'relative',
-        overflow: 'hidden'
+        marginTop: "500px"
       }}
     >
       <div style={{
@@ -689,6 +691,7 @@ const Gallery = () => {
         </div>
       )}
     </div>
+    </ParallaxComp>
   );
 };
 
