@@ -1,4 +1,3 @@
-import { Parallax } from 'react-scroll-parallax';
 import React, { useEffect, useState } from 'react';
 import * as d3 from "d3";
 import ParallaxComp from '../Parallax/Parallax';
@@ -90,7 +89,7 @@ export default function EarlySuccessLineChart() {
             .attr("transform", `translate(${margin.left},${margin.top})`);
         
 
-        const data = chartType === 'liga' ? data1 : data2;
+        const data = chartType === 'laliga' ? data1 : data2;
         
  
         const x = d3.scaleBand()
@@ -108,21 +107,22 @@ export default function EarlySuccessLineChart() {
             .attr("transform", "rotate(-45)");
         
   
-        const yDomain = chartType === 'liga' ? [10, 1] : [8, 1];
+        let yDomain ;
+        if(chartType === 'laliga'){
+            yDomain = [10, 1]
+        }
+        else{
+            yDomain = [8,1]
+        }
         
         const y = d3.scaleLinear()
             .domain(yDomain)
             .range([height, 0]);
         
         const yAxis = d3.axisLeft(y)
-            .tickValues(chartType === 'liga' ? d3.range(1, 11) : d3.range(1, 9))
-            .tickFormat(d => {
-                if (chartType === 'liga') {
-                    return d.toString(); 
-                } else {
-                    return d <= 7 ? rankingMap[d - 1] : d.toString();
-                }
-            });
+            .tickValues(chartType === 'laliga' ? d3.range(1, 11) : d3.range(1, 9))
+            .tickFormat(d => chartType === 'laliga' ? d.toString() : (d <= 7 ? rankingMap[d - 1] : d.toString()));
+         
         
         g.append("g")
             .attr("class", "myYaxis")
@@ -157,7 +157,7 @@ export default function EarlySuccessLineChart() {
             .attr("y", -margin.left + 20)
             .attr("x", -height / 2)
             .attr("text-anchor", "middle")
-            .text(chartType === 'liga' ? "Position" : "Result");
+            .text(chartType === 'laliga' ? "Position" : "Result");
     };
     
     useEffect(() => {
@@ -178,13 +178,13 @@ export default function EarlySuccessLineChart() {
                 
                 <div style={{ display: 'flex', gap: '10px', marginBottom: '10px' }}>
                     <button 
-                        onClick={() => setActiveChart('liga')}
+                        onClick={() => setActiveChart('laliga')}
                         style={{ 
-                            fontWeight: activeChart === 'liga' ? 'bold' : 'normal',
-                            background: activeChart === 'liga' ? '#69b3a2' : '#f0f0f0'
+                            fontWeight: activeChart === 'laliga' ? 'bold' : 'normal',
+                            background: activeChart === 'laliga' ? '#69b3a2' : '#f0f0f0'
                         }}
                     >
-                        La Liga
+                        La laliga
                     </button>
                     <button 
                         onClick={() => setActiveChart('copa')}
@@ -215,8 +215,8 @@ export default function EarlySuccessLineChart() {
                     boxShadow: '0 2px 6px rgba(0, 0, 0, 0.58)',
                     maxWidth: '1000px',
                     textAlign: 'left',
-                    marginTop: '-100px',
-                    }}>
+                marginTop: '-100px',
+                }}>
                 <p style={{
                     margin: 0,
                     fontSize: '1.5rem',

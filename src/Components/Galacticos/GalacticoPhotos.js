@@ -57,7 +57,7 @@ const ronaldoNCareerData = [
   { year: 1996, event: "Transfer to FC Barcelona" },
   { year: 1997, event: "Transfer to Inter Milan" },
   { year: 1998, event: "FIFA World Cup Finalist (Golden Ball winner)" },
-  { year: 2002, event: "FIFA World Cup Winner , Golden Boot and Move to Real Madrid" },
+  { year: 2002, event: "FIFA World Cup Winner , Golden boot and a Galactico" },
   { year: 2007, event: "Transfer to AC Milan" },
   { year: 2009, event: "Return to Brazil with Corinthians" },
   { year: 2011, event: "Retirement from Professional Football" }
@@ -70,7 +70,7 @@ const beckhamCareerData = [
   { year: 2003, event: "Transfer to Real Madrid" },
   { year: 2007, event: "Move to LA Galaxy" },
   { year: 2009, event: "Loan to AC Milan" },
-  { year: 2013, event: "Short stint at PSG and Retirement from Football" }
+  { year: 2013, event: "Short stint at PSG followed by Retirement from football" }
 ];
 
 const figoCareerData = [
@@ -79,7 +79,7 @@ const figoCareerData = [
   { year: 2000, event: "Controversial transfer to Real Madrid" },
   { year: 2001, event: "Wins FIFA World Player of the Year" },
   { year: 2005, event: "Transfer to Inter Milan" },
-  { year: 2009, event: "Retirement from Professional Football" }
+  { year: 2009, event: "Retirement from Professional football" }
 ];
 
 const ronaldoCareerData = [

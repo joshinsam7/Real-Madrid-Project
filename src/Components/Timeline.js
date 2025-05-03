@@ -79,11 +79,7 @@ const Timeline = ({ currentYear }) => {
   }, [currentYear]);
 
 
-  const iconPosition = {
-    left: `${margin.left + (currentYear - 1900) / (2025 - 1900) * width }px`,
-    top: `${margin.top + height / 2 - 12 + 13}px`,
-    transition: 'left 0.8s cubic-bezier(0.33, 1, 0.68, 1)'
-  };
+  
 
   return (
     <div style={{ position: 'relative', borderRadius: '12px', padding: '10px' }}>
@@ -92,7 +88,9 @@ const Timeline = ({ currentYear }) => {
         ref={iconRef}
         style={{
           position: 'absolute',
-          ...iconPosition,
+          left: `${margin.left + (currentYear - 1900) / (2025 - 1900) * width }px`,
+          top: `${margin.top + height / 2 - 12 + 13}px`,
+          transition: 'left 0.8s cubic-bezier(0.33, 1, 0.68, 1)',
           width: '24px',
           height: '24px',
           color: 'black'

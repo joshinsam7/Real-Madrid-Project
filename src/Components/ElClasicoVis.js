@@ -8,7 +8,6 @@ import bg from '../img/transitions/elclasicobg.jpg';
 import madridlogo from '../img/real-madrid-logo.png';
 import barcelonalogo from '../img/fc_barcelona.png';
 import clasicodata from '../mng/el_clasico.csv';
-
 gsap.registerPlugin(ScrollTrigger);
 
 const ELClasicoVis = () => {
@@ -60,20 +59,7 @@ const ELClasicoVis = () => {
         return totalMatches > 0 ? ((team.wins / totalMatches) * 100).toFixed(1) : '0';
       };
 
-  const resetVisualization = () => {
-    setDisplayCount(0);
-    setStats({
-      realMadrid: { wins: 0, losses: 0, draws: 0 },
-      barcelona: { wins: 0, losses: 0, draws: 0 }
-    });
-    setIsPlaying(false);
-    setAnimationSpeed(1);
-    setFilter('all');
-    if (animationRef.current) {
-      clearInterval(animationRef.current);
-      animationRef.current = null;
-    }
-  };
+
 
   const startAnimation = () => {
     if (animationRef.current) {
@@ -107,14 +93,7 @@ const ELClasicoVis = () => {
     animationRef.current = setInterval(animate, baseInterval / currentSpeed);
   };
 
-  const stopAnimation = () => {
-    setIsPlaying(false);
-    if (animationRef.current) {
-      clearInterval(animationRef.current);
-      animationRef.current = null;
-    }
-  };
-
+ 
   useEffect(() => {
     const ctx = gsap.context(() => {
       Papa.parse(clasicodata, {
@@ -643,39 +622,7 @@ const ELClasicoVis = () => {
           boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
         }}
       >
-        <button
-          onClick={resetVisualization}
-          style={{
-            padding: '8px 15px',
-            backgroundColor: '#4285f4',
-            color: 'white',
-            border: 'none',
-            borderRadius: '5px',
-            cursor: 'pointer',
-            fontWeight: 'bold',
-          }}
-        >
-          Reset
-        </button>
-
-        <button
-          onClick={isPlaying ? stopAnimation : startAnimation}
-          style={{
-            padding: '8px 15px',
-            backgroundColor: isPlaying ? '#ea4335' : '#34a853',
-            color: 'white',
-            border: 'none',
-            borderRadius: '5px',
-            cursor: 'pointer',
-            fontWeight: 'bold',
-          }}
-        >
-          {isPlaying ? 'Pause' : 'Play'}
-        </button>
-
-        <div style={{ display: 'flex', alignItems: 'center', marginLeft: '5px' }}>
-          <span style={{ marginRight: '10px', fontSize: '14px' }}>Speed: {animationSpeed}x</span>
-        </div>
+        Nothing to separate them!
       </div>
     </div>
   );

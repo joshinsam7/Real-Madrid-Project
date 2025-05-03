@@ -534,7 +534,7 @@ const Gallery = () => {
                 width: '100%',
                 maxWidth: '1400px',
                 zIndex: 5,
-                marginTop: '-120px' // Changed from -30px to -60px to move frames higher
+                marginTop: '-120px'
               }}
             >
               <div

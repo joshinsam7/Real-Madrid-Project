@@ -100,13 +100,12 @@ function createBarChart(container, {width, height}) {
         .style("font-size", "10px");
     
     const y = d3.scaleLinear()
-      .domain([0, 100.5])
+      .domain([0, 120])
       .range([rec_height,0]); 
 
     svg.append("g")
-      .call(d3.axisLeft(y).ticks(0))
-        .selectAll("text")
-        .remove();
+      .call(d3.axisLeft(y).ticks(10))
+  
 
     svg.selectAll("rect")
     .data(barChart_data)
@@ -184,7 +183,7 @@ function createBarChart(container, {width, height}) {
 
     svg.append("text")
       .attr("transform", "rotate(-90)")
-      .attr("y", 50 - margin.left)
+      .attr("y", 10 - margin.left)
       .attr("x", -(rec_height / 2))
       .attr("dy", "1em")
       .style("text-anchor", "middle")
@@ -198,6 +197,14 @@ function createBarChart(container, {width, height}) {
       .style("text-anchor", "middle")
       .style("font-weight","bold")
       .text("Players");
+
+      svg.append("text")
+      .attr("x", rec_width - 200  )
+      .attr("y", -20)
+      .attr("dy", "1em")
+      .style("text-anchor", "middle")
+      .style("font-weight","bold")
+      .text("- - - Represents the maximum a Spanish club(Not Real Madrid) spent upto that point");
   
     
     return svg; 
