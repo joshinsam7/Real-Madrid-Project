@@ -2,17 +2,17 @@ import React, { useEffect, useRef, useState} from 'react';
 import { ParallaxProvider, Parallax } from 'react-scroll-parallax';
 import * as d3 from "d3";
 
-import figoImg from '../img/faces/figo.png';
-import zidaneImg from '../img/faces/zidane.png';
-import r9Img from '../img/faces/r9.png';
-import beckhamImg from '../img/faces/beckham.png';
-import robinhoImg from '../img/faces/robinho.png';
-import rudd from '../img/faces/rudd.png';
-import kakaImg from '../img/faces/kaka.png';
-import benzemaImg from '../img/faces/benzema.png';
-import cr7Img from '../img/faces/cr7.png';
-import alonsoImg from '../img/faces/xabi.png';
-import baleImg from '../img/faces/bale.png';
+import figoImg from '../../img/faces/figo.png';
+import zidaneImg from '../../img/faces/zidane.png';
+import r9Img from '../../img/faces/r9.png';
+import beckhamImg from '../../img/faces/beckham.png';
+import robinhoImg from '../../img/faces/robinho.png';
+import rudd from '../../img/faces/rudd.png';
+import kakaImg from '../../img/faces/kaka.png';
+import benzemaImg from '../../img/faces/benzema.png';
+import cr7Img from '../../img/faces/cr7.png';
+import alonsoImg from '../../img/faces/xabi.png';
+import baleImg from '../../img/faces/bale.png';
 
 const barChart_data = [
   {  value: 60, name: "Luís Figo", peakValue: 21},

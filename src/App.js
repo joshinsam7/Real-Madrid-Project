@@ -7,12 +7,11 @@ import Trophies from './Components/Trophies';
 import RealMadridOrigins from './Components/EarlySteps/RealMadridOrigins';
 import Ramos from './Components/Ramos';
 import CopaDelRey from './Components/EarlySteps/CopaDelRey';
-import SantiagoScroll from './Components/Santiago';
+import SantiagoScroll from './Components/SantiagoEra/Santiago';
 import FirstPhoto from './Components/EarlySteps/FirstPhoto';
-import LostDominance from './Components/Lost Dominance';
-import Galacticos from './Components/Galacticos';
-import GalacticoPhotos from './Components/GalacticoPhotos';
-import GalacticoVis from './Components/GalacticoDataVis';
+import Galacticos from './Components/Galacticos/Galacticos';
+import GalacticoPhotos from './Components/Galacticos/GalacticoPhotos';
+import GalacticoVis from './Components/Galacticos/GalacticoDataVis';
 import Ronaldo from './Components/Ronaldo';
 import UCL from './Components/UCL';
 import ELClasicoVis from './Components/ElClasicoVis';
@@ -224,9 +223,7 @@ export default function App() {
             <div style={{ paddingTop: "80px" }}>
               <EarlySuccessAndLaliga/>
               <EarlySuccessLineChart/>
-            
               <SantiagoScroll />
-              <LostDominance />
               <Galacticos />
               <GalacticoPhotos />
               <GalacticoVis />

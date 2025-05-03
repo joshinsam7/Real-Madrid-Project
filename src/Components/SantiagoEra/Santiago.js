@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import santiago from '../img/santiago.png';
+import santiago from '../../img/santiago.png';
 import * as d3 from 'd3';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -353,8 +353,12 @@ const Santiago = () => {
         justifyContent: 'center', overflowY: 'auto', paddingTop: '0px',
       }}>
         <div style={{
-          width: '100%', display: 'flex', backgroundColor: 'rgba(240, 237, 230, 0)',
-          boxShadow: 'none', marginLeft: '2rem', marginRight: '2rem',
+          width: '100%',
+           display: 'flex',
+            backgroundColor: 'rgba(240, 237, 230, 0)',
+          boxShadow: 'none', 
+          marginLeft: '2rem', 
+          marginRight: '2rem',
         }}>
           <div style={{
             width: '30%', paddingLeft: '10px', paddingTop: '0px',
@@ -397,8 +401,11 @@ const Santiago = () => {
             <div style={{ marginBottom: '0px' }}>
               <h2 style={{
                 fontFamily: '"IM Fell English", "Times New Roman", serif',
-                fontSize: '20px', color: '#000000', fontWeight: 'bold',
-                marginBottom: '5px', textAlign: 'center',
+                fontSize: '20px', 
+                color: '#000000', 
+                fontWeight: 'bold',
+                marginBottom: '5px', 
+                textAlign: 'center',
               }}>
                 Graphical Evidence of Terror
               </h2>
@@ -412,13 +419,25 @@ const Santiago = () => {
               alignItems: 'center', marginBottom: '15px',
             }}>
               <div style={{ display: 'flex', alignItems: 'center' }}>
-                <div style={{ display: 'flex', alignItems: 'center', marginRight: '20px' }}>
-                  <div style={{ width: '12px', height: '12px', backgroundColor: '#000000', marginRight: '5px' }}></div>
+                <div style={
+                  { display: 'flex',
+                   alignItems: 'center',
+                   marginRight: '20px' }
+                  }>
+                  <div style={{ width: '12px', 
+                  height: '12px', backgroundColor: '#000000', marginRight: '5px' }}></div>
                   <span style={{ fontSize: '12px', fontFamily: '"IM Fell English", serif', color: '#000000' }}>Real Madrid</span>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center' }}>
-                  <div style={{ width: '12px', height: '12px', backgroundColor: '#8b0000', marginRight: '5px' }}></div>
-                  <span style={{ fontSize: '12px', fontFamily: '"IM Fell English", serif', color: '#000000' }}>{selectedTeam}</span>
+                  <div style={{ width: '12px', 
+                  height: '12px', 
+                  backgroundColor: '#8b0000', 
+                  marginRight: '5px' 
+                  }}></div>
+                  <span style={{ fontSize: '12px', 
+                  fontFamily: '"IM Fell English", serif', 
+                  color: '#000000' 
+                  }}>{selectedTeam}</span>
                 </div>
               </div>
 

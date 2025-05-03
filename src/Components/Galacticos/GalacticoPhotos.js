@@ -1,27 +1,26 @@
 import React, { use, useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import figo from '../img/figo.jpeg';
-import zidane from '../img/zidane.jpeg';
-import ronaldoN from '../img/ronaldoN.png'
-import beckham from '../img/beckham.jpg'
-import ronaldo from '../img/ronaldo.jpg'
-import modric from '../img/modric.jpg'
+import figo from '../../img/figo.jpeg';
+import zidane from '../../img/zidane.jpeg';
+import ronaldoN from '../../img/ronaldoN.png'
+import beckham from '../../img/beckham.jpg'
+import modric from '../../img/modric.jpg'
 
-import modricFace from '../img/faces/modric.png';
-import cr7 from '../img/faces/cr7.png';
-import zlatan from '../img/faces/zlatan.png';
-import bale from '../img/faces/bale.png';
-import falcao from '../img/faces/falcao.png';
-import villa from '../img/faces/villa.png';
-import torres from '../img/faces/torres.png';
-import pique from '../img/faces/pique.png';
-import messi from '../img/faces/messi.png';
-import zidaneFace from '../img/faces/zidane.png';
-import ronaldoNFace from '../img/faces/r9.png';
-import figoFace from '../img/faces/figo.png';
-import ronaldoFace from '../img/faces/cr7.png';
-import beckhamFace from '../img/faces/beckham.png';
+import modricFace from '../../img/faces/modric.png';
+import cr7 from '../../img/faces/cr7.png';
+import zlatan from '../../img/faces/zlatan.png';
+import bale from '../../img/faces/bale.png';
+import falcao from '../../img/faces/falcao.png';
+import villa from '../../img/faces/villa.png';
+import torres from '../../img/faces/torres.png';
+import pique from '../../img/faces/pique.png';
+import messi from '../../img/faces/messi.png';
+import zidaneFace from '../../img/faces/zidane.png';
+import ronaldoNFace from '../../img/faces/r9.png';
+import figoFace from '../../img/faces/figo.png';
+import ronaldoFace from '../../img/faces/cr7.png';
+import beckhamFace from '../../img/faces/beckham.png';
 import * as d3 from "d3";
 
 

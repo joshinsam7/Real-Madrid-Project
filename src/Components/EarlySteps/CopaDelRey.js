@@ -12,7 +12,6 @@ export default function CopaDelRey() {
           alignItems: 'center',
           justifyContent: 'center',
         }}>
-          <h2>Copa Del Rey was established</h2>
         </div>
     </ParallaxComp>
   );
